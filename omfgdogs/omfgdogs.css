@@ -1,4 +1,28 @@
-body{
-	background-image:url('omgfdogs.gif');
+
+audio{
+	visibility:hidden;
+}
+
+
+
+	a{
+		font-size: 40px;
+		color: white;
+		position:fixed;
+		bottom: 0;
+		right: 0;
+	}
+
+@media screen and (min-width:992px) {
+
+	body {
+		background-image:url("http://tuftsdev.github.io/WebProgramming/assignments/omfgdogs.gif")
+	}
+
+	p{
+		visibility:hidden;
+	}
 
 }
+
+
