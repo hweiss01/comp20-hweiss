@@ -7,7 +7,7 @@ audio{
 
 	a{
 		font-size: 40px;
-		color: white;
+		color: black;
 		position:fixed;
 		bottom: 0;
 		right: 0;
@@ -21,6 +21,14 @@ audio{
 
 	p{
 		visibility:hidden;
+	}
+
+	a{
+		font-size: 40px;
+		color: white;
+		position:fixed;
+		bottom: 0;
+		right: 0;
 	}
 
 }
