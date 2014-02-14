@@ -15,7 +15,6 @@
 		h = date.getHours();
 		min = date.getMinutes();
 		content = document.createTextNode(m + "/" + d + "/" + y + " " + h + ":" + min + " - " + message);
-		console.log(content)
 		child = document.createElement("p") 
 		child.appendChild(content);
 		firstchild = stat.firstChild;
@@ -38,7 +37,7 @@
 		</ul>
 	</div>
 	<h2 id="fullname">Barney Gumble</h2>
-	<h3>What are you thinking about? <input type="text" id="msg" name="msg" size="30"/ onchange ="runScript()" ></h3>
+	<h3>What are you thinking about? <input type="text" id="msg" name="msg" size="30" onchange ="runScript()" /></h3>
 	<h3>Updates</h3>
 	<div id="status">
 	</div>
