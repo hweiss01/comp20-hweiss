@@ -11,9 +11,10 @@
             ctx.fillRect(0, 0, 800, 100)
             sprite = new Image();
             sprite.src = "assets/duckhunt.png";
-            //sprite.addEventListener("load", function() {
-            //	  ctx.drawImage(sprite, 30, 20);
-            //	}, false);
+            sprite.addEventListener("load", function() {
+            	  ctx.drawImage(sprite, 0, 713, 900, 190, 0, 450, 800, 190);
+
+            	}, false);
           
             
         }
