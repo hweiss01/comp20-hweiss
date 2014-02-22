@@ -16,6 +16,7 @@
             sprite.addEventListener("load", function() {
             	  ctx.drawImage(sprite, 0, 273, 100, 116, 20, 35, 175, 450);
             	  ctx.drawImage(sprite, 0, 713, 900, 190, 0, 400, 800, 190);
+            	  ctx.drawImage(sprite, 0, 0, 58, 50, 300, 470, 100, 100);
 
             	}, false);
           
