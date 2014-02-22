@@ -17,7 +17,12 @@
             	  ctx.drawImage(sprite, 0, 273, 100, 116, 20, 35, 175, 450);
             	  ctx.drawImage(sprite, 0, 713, 900, 190, 0, 400, 800, 190);
             	  ctx.drawImage(sprite, 0, 0, 58, 50, 300, 470, 100, 100);
-            	  ctx.drawImage(sprite, 0, 153, 35, 40, 650, 50, 65, 70);
+            	  ctx.drawImage(sprite, 0, 153, 35, 40, 620, 100, 65, 70);
+            	  ctx.drawImage(sprite, 161, 191, 50, 40, 175, 300, 70, 80);
+            	  ctx.drawImage(sprite, 335, 115, 39, 40, 325, 150, 70, 80);
+            	  ctx.drawImage(sprite, 335, 190, 39, 40, 650, 350, 70, 80);
+            	  ctx.drawImage(sprite, 205, 150, 39, 40, 350, 370, 70, 80);
+            	 
             	}, false);
           
             
