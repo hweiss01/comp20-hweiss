@@ -1,0 +1,24 @@
+Hayley Weiss Assignment 2 part 1
+
+1. I used the sprite sheet and the drawImage() function to draw
+the required images onto the webpage. I am not sure, though, if I used the 
+correct method to load my images. Since an image needs to be loaded before
+it can be used in drawImage, I used 
+
+sprite.addEventListener("load", function() { ....
+
+and put my drawImage lines in here. I am not sure if this is correct but
+I couldn't find any other way to do it, as I only just introduced my images
+right above.
+
+Also, when I opened my file in Google Chrome it looked exactly how I wanted it
+to. But when I opened it in Firefox, there was a strip of blue sky at the 
+bottom of the canvas, making it look like the dirt didn't fully cover the sky,
+even though this didn't appear in Chrome. And when I opened it in Safari, it 
+only showed the rectangles I drew for the sky and the ground, and my first
+drawImage(), which is of the tree. None of the other drawImage() commands show
+up. I have no clue why this would be.!
+
+2.  I didn't work with anyone
+
+3. It took about 3 hours.
