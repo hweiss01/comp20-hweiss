@@ -2,6 +2,7 @@
 var xhr;
 
 function init() {
+	//dodoodod
 
 	latlng = new google.maps.LatLng(-34.397, 150.644);
 	var mapOptions = { center : latlng};
