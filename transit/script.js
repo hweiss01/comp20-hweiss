@@ -1,5 +1,4 @@
 
-
 var xhr;
 var myLat = 0;
 var myLng = 0;
@@ -119,10 +118,14 @@ function dataReady() {
 			infowindow.setContent(mecontents);
 			infowindow.open(map,meMarker);
 
+			var color;
+			if(scheduleData["line"] == "blue") { color = '#0000FF';}
+			if(scheduleData["line"] == "red") { color = '#FF0000';}
+			if(scheduleData["line"] == "orange") { color = 'FF6600';}
 			path = new google.maps.Polyline({
 
 				path: pathcoordinates,
-				strokeColor: '#FF0000',
+				strokeColor: color,
 				strokeWeight: 2
 			});
 
@@ -167,7 +170,6 @@ function dataReady() {
 		mecontents = mecontents + '<p>There are no stations near you</p>'
 		infowindow.setContent(mecontents);
 		infowindow.open(map,meMarker);
-		console.log("fail");
 	}
 
 }
