@@ -5,18 +5,34 @@
 <head>
 <title>Fecesbook</title>
 	<script>
+
+	function init(){
+		stat = document.getElementById("status");
+		output = "";
+
+		for (key in localStorage) {
+			output ="<p>" + localStorage.getItem(key) + "</p>\n" + output;
+		}
+		stat.innerHTML = output;
+
+	}
 	function runScript(){
 		stat = document.getElementById("status");
 		message = document.getElementById("msg").value;
 		date = new Date();
-		d = date.getDay();
+		d = date.getDate();
 		m = date.getMonth()+1;
 		y = date.getFullYear();
 		h = date.getHours();
 		min = date.getMinutes();
+		txt = m + "/" + d + "/" + y + " " + h + ":" + min + " - " + message;
 		content = document.createTextNode(m + "/" + d + "/" + y + " " + h + ":" + min + " - " + message);
-		child = document.createElement("p") 
+		child = document.createElement("p");
 		child.appendChild(content);
+		key = new Date().getTime();
+
+		localStorage[key] = txt;
+	
 		firstchild = stat.firstChild;
 		stat.insertBefore(child, firstchild);  
 		document.getElementById("msg").value = "";
@@ -24,7 +40,7 @@
 	</script>
 </head>
 
-<body>
+<body onload = "init()">
 	<h1>Fecebook</h1>
 	<div id="nav">
 		<ul>
