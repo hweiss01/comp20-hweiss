@@ -2,7 +2,7 @@ REadme:
 
 Hayley Weiss
 
-So! I had everything pretty much working, and i was very pleased. Then, suddenly 2048 claimed my heroku app no longer had CORs enabled, even though it previously was able to send a post request just fine. I tried lots of different things for quite a while, and I just do not feel like I am going to find the problem. And since I am sure most other things are working, you can probably tell me what the problem was -.-
+I think I have everything working! I had a lot of problems with getting CORS enabled to start, but then I realized it was a minor error for something else in the same function causing the problem. Once I fixed that it cleared all up!
 
 I went to Jasper's info session and found a lot of help i that and the demonstrations in class. Otherwise I didn't get help from anyone.
 
