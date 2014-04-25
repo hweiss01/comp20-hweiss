@@ -11,26 +11,22 @@
 	<h1> ScoreCenter Security Report </h1>
 	<p> Prepared by Hayley Weiss </p>
 	
-	<h2>Introduction</h2>
-<<<<<<< HEAD
-	<p>This assessment looks to test the security of the 2048-GameCenter created by Daniel Kim for Tufts Comp20, or Web Programming. The application was developed to offer a gaming center to keep track of the high scores for the highly addicting game, 2048. The application provides an API that allows other developers to retrieve their own scores.It also consists of an interface allowing users to see all the high scores, as well as the scores from a particular user. However, security was not a part of the assignment and thus there are many vulnerabilities that make this application currently unfit for the public.</p>
+	<p>This security assessment tests the 2048-Game Center created by fellow student Daniel Kim for Comp20 assignment 4. This assignment's requirements were that the developer create a web application that maintains a scoreboard of high scores for the players of 2048, such that multiple users can submit and retrieve scores. Users are also able to search for scores by unique username. However, the developer left many security risks in the product that make it inappropriate to release to the public. This assessment attempts to identify and outline some of these vulnerabilities present and show solutions as to how to prevent them.</p>
 
 	<h2>Methodology</h2>
 	<p>Initially, I performed "black-box" testing, which consisted of attempting to hack the application with what is only available from outside, as in without access to the source code. I made use of the simple tool curl to perform POSTs, and toyed with URI arguments to test the GETs.</p>
 	<p> Then, I examined the source code and looked for vulnerabilities there that could be exploited. </p>
-=======
-	<p>This security assessment tests the 2048-Game Center created by fellow student Daniel Kim for Comp20 assignment 4. This assignment's requirements were that the developer create a web application that maintains a scoreboard of high scores for the players of 2048, such that multiple users can submit and retrieve scores. Users are also able to search for scores by unique username. However, the developer left many security risks in the product that make it inappropriate to release to the public. This assessment attempts to identify and outline some of these vulnerabilities present and show solutions as to how to prevent them.</p>
 
-	<h2>Methodology</h2>
-	<p>First, I performed "black box" testing, which meant I attempted to hack the application before reading the source code. I used the curl tool in order to try control the data submitted to the application. Then I looked through the source code of the application and found some errors in there that could be exploited.</p>
->>>>>>> gh-pages
+	
+
+
 
 	<h2>Abstract of Findings</h2>
 	<p>fds</p>
 
 	<h2>Issues Found</h2>
 	<ol>
-<<<<<<< HEAD
+
 		<li> <h3> Script Injection </h3>
 			<p> This effects the GET API </p>
 			<p> This is a severe issue, as the application doesn't handle data correctly and opens users to information attacks </p>
@@ -49,7 +45,7 @@
 		</li>
 
 	</ol>
-=======
+
 		<li> <h3> Cross Site Scripting </h3> 
 			<p>  This was found on the /submit.json page </p>
 			<p>  This is a highly severe issue, as a cross site scripting attack can completely change what website your viewers see upon accessing your application. </p>
@@ -63,11 +59,12 @@
 			<p> I found this problem while looking through the source code of the application. The code written uses the wild card "*", which allows any domain to gain access to the application. It is very unwise to open up an application universally like this. Also, this code allows CORS for every API, instead of just the APIs that require CORS to function properly. </p>
 			<img src = "../CORS.png" alt="CORS proof" />
 			<p> This can be avoided by either validating the response, or adding some form of user authentication, such that only those with the right credentials can access the site </p>
+		</li>
 	</ol>
 	<p>Cross-Site scripting</p>
 	<p>
 
->>>>>>> gh-pages
+
 
 	<h2>Conclusion</h2>
 	<p>fds</p>
