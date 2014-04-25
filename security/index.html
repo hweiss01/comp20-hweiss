@@ -44,25 +44,8 @@
 			<p>This issue can be resolved by either validating reponses, or using some means of authentication to check the credentials of a server, possibly through the "withCredentials" property on "XMLHttpRequest". </p>
 		</li>
 
+	
 	</ol>
-
-		<li> <h3> Cross Site Scripting </h3> 
-			<p>  This was found on the /submit.json page </p>
-			<p>  This is a highly severe issue, as a cross site scripting attack can completely change what website your viewers see upon accessing your application. </p>
-			<p> I found this issue by using curl to add a record to the mongodatabase that had a script command as the username. </p>
-			<p> curl command here and screen shot</p>
-			<p>This can be avoided by combing user input and either just not accepting posts that include script commands, or escaping to the HTML-code equivalents. </p>
-		</li>
-		<li> <h3> CORS without validation </h3>
-			<p> Both the POST /submit.json and the GET /scores.json APIs are effected directly. However due to the nature of the code, all APIs are effected.  </p>
-			<p> This is a very big problem </p>
-			<p> I found this problem while looking through the source code of the application. The code written uses the wild card "*", which allows any domain to gain access to the application. It is very unwise to open up an application universally like this. Also, this code allows CORS for every API, instead of just the APIs that require CORS to function properly. </p>
-			<img src = "../CORS.png" alt="CORS proof" />
-			<p> This can be avoided by either validating the response, or adding some form of user authentication, such that only those with the right credentials can access the site </p>
-		</li>
-	</ol>
-	<p>Cross-Site scripting</p>
-	<p>
 
 
 
