@@ -10,19 +10,36 @@
 
 	<h1> ScoreCenter Security Report </h1>
 	
-	<h1>Introduction</h1>
+	<h2>Introduction</h2>
+	<p>This security assessment tests the 2048-Game Center created by fellow student Daniel Kim for Comp20 assignment 4. This assignment's requirements were that the developer create a web application that maintains a scoreboard of high scores for the players of 2048, such that multiple users can submit and retrieve scores. Users are also able to search for scores by unique username. However, the developer left many security risks in the product that make it inappropriate to release to the public. This assessment attempts to identify and outline some of these vulnerabilities present and show solutions as to how to prevent them.</p>
+
+	<h2>Methodology</h2>
+	<p>First, I performed "black box" testing, which meant I attempted to hack the application before reading the source code. I used the curl tool in order to try control the data submitted to the application. Then I looked through the source code of the application and found some errors in there that could be exploited.</p>
+
+	<h2>Abstract of Findings</h2>
 	<p>fds</p>
 
-	<h1>Methodology</h1>
-	<p>fds</p>
+	<h2>Issues Found</h2>
+	<ol>
+		<li> <h3> Cross Site Scripting </h3> 
+			<p>  This was found on the /submit.json page </p>
+			<p>  This is a highly severe issue, as a cross site scripting attack can completely change what website your viewers see upon accessing your application. </p>
+			<p> I found this issue by using curl to add a record to the mongodatabase that had a script command as the username. </p>
+			<p> curl command here and screen shot</p>
+			<p>This can be avoided by combing user input and either just not accepting posts that include script commands, or escaping to the HTML-code equivalents. </p>
+		</li>
+		<li> <h3> CORS without validation </h3>
+			<p> Both the POST /submit.json and the GET /scores.json APIs are effected directly. However due to the nature of the code, all APIs are effected.  </p>
+			<p> This is a very big problem </p>
+			<p> I found this problem while looking through the source code of the application. The code written uses the wild card "*", which allows any domain to gain access to the application. It is very unwise to open up an application universally like this. Also, this code allows CORS for every API, instead of just the APIs that require CORS to function properly. </p>
+			<img src = "../CORS.png" alt="CORS proof" />
+			<p> This can be avoided by either validating the response, or adding some form of user authentication, such that only those with the right credentials can access the site </p>
+	</ol>
+	<p>Cross-Site scripting</p>
+	<p>
 
-	<h1>Abstract of Findings</h1>
-	<p>fds</p>
 
-	<h1>Issues Found</h1>
-	<p>fds</p>
-
-	<h1>Conclusion</h1>
+	<h2>Conclusion</h2>
 	<p>fds</p>
 
 
