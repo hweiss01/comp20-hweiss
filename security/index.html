@@ -22,7 +22,17 @@
 	<p>fds</p>
 
 	<h2>Issues Found</h2>
-	<p>fds</p>
+	<ol>
+		<li> <h3> CORS without validation </h3>
+			<p> This affects all the APIs of the application, due to the nature of the issue </p>
+			<p> This is a severe issue, as it allows any site access to the application </p>
+			<p> The developer enabled Cross Origin Resource Sharing by means of using "*", or the universal allow. This means that any URL is able to gain access to the application. Similarly, the code opens up every API to CORS, instead of just the APIs that require CORS to function. </p>
+
+			<img src = "/..CORS.png" alt="CORS snapshot"/>
+			<p>This issue can be resolved by either validating reponses, or using some means of authentication to check the credentials of a server, possibly through the "withCredentials" property on "XMLHttpRequest". </p>
+		</li>
+
+	</ol>
 
 	<h2>Conclusion</h2>
 	<p>fds</p>
