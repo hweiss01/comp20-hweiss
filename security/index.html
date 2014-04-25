@@ -19,10 +19,8 @@
 
 	
 
-
-
 	<h2>Abstract of Findings</h2>
-	<p>fds</p>
+	<p>Some of the vulnerabilities found in this application are due to not combing through user input and allowing harmful data to get through. Other issues are found in that the application has no restrictions as to which servers can access it, or its mongodatabase.</p>
 
 	<h2>Issues Found</h2>
 	<ol>
@@ -31,9 +29,9 @@
 			<p> This effects the GET API </p>
 			<p> This is a severe issue, as the application doesn't handle data correctly and opens users to information attacks </p>
 			<p> When using the POST API, the data is not escaped and thus client can include JavaScript or HTML in place of the username. Thus, when the GET API is accessed, these pieces of code will activate and can effect what the client sees. For example with the curl command: </p>
-			<img src = "../CURL.png" alt="curl snapshop" />
+			<img src = "http://tuftsdev.github.io/comp20-hweiss/security/CURL.png" alt="curl snapshop" />
 			<p> A popular meme character will show up in place of a username </p>
-			<img src = "../XXS.png" alt="dog" />
+			<img src = "http://tuftsdev.github.io/comp20-hweiss/security/XXS.png" alt="dog" />
 			<p> This can be resolved by checking and escaping user input before storing the data and filtering out dangerous characters. </p>
 		</li>
 		<li> <h3> CORS without validation </h3>
@@ -41,17 +39,24 @@
 			<p> This is a severe issue, as it allows any site access to the application </p>
 			<p> The developer enabled Cross Origin Resource Sharing by means of using "*", or the universal allow. This means that any URL is able to gain access to the application. Similarly, the code opens up every API to CORS, instead of just the APIs that require CORS to function. </p>
 
-			<img src = "../CORS.png" alt="CORS snapshot"/>
+			<img src = "http://tuftsdev.github.io/comp20-hweiss/security/CORS.png" alt="CORS snapshot"/>
 			<p>This issue can be resolved by either validating reponses, or using some means of authentication to check the credentials of a server, possibly through the "withCredentials" property on "XMLHttpRequest". </p>
 		</li>
-
+		<li>
+			<h3> Mongo requires no username or password </h3>
+			<p> This effects the mongo database </p>
+			<p> This is a severe issue, as it allows any user to connect to the database </p>
+			<p> In looking through the source code for the application, it became apparent that accessing the mongo database required no authentification on the user's end. </p>
+			<img src = "http://tuftsdev.github.io/comp20-hweiss/security/MONGO.png" alt = "Mongo snapshot"/>
+			<p> To fix this, one needs to enable access control to restrict access to the instance such that users must identify themselves when they connect. </p>
+		</li>
 	
 	</ol>
 
 
 
 	<h2>Conclusion</h2>
-	<p>fds</p>
+	<p>The issues found with this application make it, as of now, unusuable for the public. There are too many vulnerabilities that put the application and its users at risk. But following the recommendations made above, the application will be much safer from these vulnerabilities than it previously was. </p>
 
 
 </body>
