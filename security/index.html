@@ -23,8 +23,16 @@
 
 	<h2>Issues Found</h2>
 	<ol>
+		<li> <h3> Script Injection </h3>
+			<p> This effects the GET API </p>
+			<p> This is a severe issue, as the application doesn't handle data correctly and opens users to information attacks </p>
+			<p> When using the POST API, the data is not escaped and thus client can include JavaScript or HTML in place of the username. Thus, when the GET API is accessed, these pieces of code will activate and can effect what the client sees. For example with the curl command: </p>
+			<img src = "/..CURL.png" alt="curl snapshop" />
+			<p> A popular meme character will show up in place of a username </p>
+			<img src = "/..XXS.png" alt="dog" />
+		</li>
 		<li> <h3> CORS without validation </h3>
-			<p> This affects all the APIs of the application, due to the nature of the issue </p>
+			<p> This effects all the APIs of the application, due to the nature of the issue </p>
 			<p> This is a severe issue, as it allows any site access to the application </p>
 			<p> The developer enabled Cross Origin Resource Sharing by means of using "*", or the universal allow. This means that any URL is able to gain access to the application. Similarly, the code opens up every API to CORS, instead of just the APIs that require CORS to function. </p>
 
